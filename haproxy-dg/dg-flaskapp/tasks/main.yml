@@ -10,7 +10,12 @@
       - git
       - docker
      state: present
-  
+
+  - name: Ensure docker deamon is running
+    service:
+      name: docker
+      state: started
+    become: true
     
   - name: Remove old files foo
     file: path=/var/docker/ state=absent
