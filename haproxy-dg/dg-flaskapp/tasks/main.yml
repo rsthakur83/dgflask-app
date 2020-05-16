@@ -28,4 +28,5 @@
     command: docker build -t flaskapp:ravi /var/docker/
 
   - name: Run the build
-    command: docker run -tid -p 9"{{ lookup('env', 'BUILD_ID')}}":5000 webapp:"{{ lookup('env', 'BUILD_ID')}}"
+    #command: docker run -tid -p 9"{{ lookup('env', 'BUILD_ID')}}":5000 webapp:"{{ lookup('env', 'BUILD_ID')}}"
+    command: docker run -tid -p 9023:5000 flaskapp:ravi
