@@ -26,7 +26,9 @@
   - name: Build docker image
     #command: docker build -t flaskapp:"{{ lookup('env', 'BUILD_ID')}}" /var/docker/
     #chdir: /var/docker/app
-    command: chdir=/var/docker/app; docker build -t flaskapp:ravi .
+    command: docker build -t flaskapp:ravi .
+    args:
+      chdir: /var/docker/app
 
   - name: Run the build
     #command: docker run -tid -p 9"{{ lookup('env', 'BUILD_ID')}}":5000 webapp:"{{ lookup('env', 'BUILD_ID')}}"
