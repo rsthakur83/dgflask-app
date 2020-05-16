@@ -28,17 +28,15 @@
          force=yes
 
 
-#  - name: Copying Docker file
-#    copy: src=/var/docker/app/Dockerfile dest=/var/docker remote_src=yes
 
 
   - name: Build docker image
-    #command: docker build -t flaskapp:"{{ lookup('env', 'BUILD_ID')}}" /var/docker/
+    command: docker build -t flaskapp:"{{ lookup('env', 'BUILD_ID')}}" /var/docker/
     #chdir: /var/docker/app
     command: docker build -t flaskapp:ravi .
     args:
       chdir: /var/docker/app
 
   - name: Run the build
-    #command: docker run -tid -p 9"{{ lookup('env', 'BUILD_ID')}}":5000 webapp:"{{ lookup('env', 'BUILD_ID')}}"
-    command: docker run -tid -p 9023:5000 flaskapp:ravi
+    command: docker run -tid -p 9"{{ lookup('env', 'BUILD_ID')}}":5000 flaskapp:"{{ lookup('env', 'BUILD_ID')}}"
+    #command: docker run -tid -p 9023:5000 flaskapp:ravi
