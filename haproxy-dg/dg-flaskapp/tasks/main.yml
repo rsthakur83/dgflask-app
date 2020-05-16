@@ -20,7 +20,7 @@
 
 
   - name: Copying Docker file
-    copy: src=/var/docker/app/Dockerfile dest=/var/docker/
+    copy: src=/var/docker/app/Dockerfile dest=/var/docker/ force=yes
 
 
   - name: Build docker image
