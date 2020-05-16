@@ -1,0 +1,52 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+      <col span="2" style="background-color:blue">
+  }
+table.a {
+  table-layout: auto;
+  width: 50%;
+}
+
+  </style>
+  </head>
+  <body>
+
+  <h1>Category Data</h1>
+
+      <th>Total Count {{ all_items.total }}</th>
+
+  <table class="a">
+    <tr>
+      <th>Categories</th>
+      <th>Created At</th>
+      <th>Icon Url</th>
+      <th>ID</th>
+      <th>Updated At</th>
+      <th>URL</th>
+      <th>Value</th>
+    </tr>
+  </table>
+{% block content %}
+{% for all_item in all_items.result %}
+  <table>
+    <tr>
+      <td>{{ query }}</td>
+      <td>{{ all_item.created_at }}</td>
+      <td>{{ all_item.icon_url }}</td>
+      <td>{{ all_item.id }}</td>
+      <td>{{ all_item.updated_at }}</td>
+      <td>{{ all_item.url }}</td>
+      <td>{{ all_item.value }}</td>
+    </tr>
+  </table>
+
+
+  </body>
+  </html>
+
+{% endfor %}
+{% endblock %}

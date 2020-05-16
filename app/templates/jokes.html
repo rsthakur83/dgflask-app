@@ -1,0 +1,40 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+      <col span="2" style="background-color:blue">
+  }
+  </style>
+  </head>
+  <body>
+
+{% block content %}
+  <h1>Jokes Data</h1>
+
+  <table>
+    <tr>
+      <th>categories</th>
+      <th>Created At</th>
+      <th>Icon Url</th>
+      <th>ID</th>
+      <th>Updated At</th>
+      <th>URL</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>{{ all_items.categories[0] }}</td>
+      <td>{{ all_items.created_at }}</td>
+      <td>{{ all_items.icon_url }}</td>
+      <td>{{ all_items.id }}</td>
+      <td>{{ all_items.updated_at }}</td>
+      <td>{{ all_items.url }}</td>
+      <td>{{ all_items.value }}</td>
+    </tr>
+  </table>
+
+  </body>
+  </html>
+
+{% endblock %}
