@@ -2,6 +2,10 @@
 
   - name: Install EPEL repo
     yum: name=epel-release state=present
+
+
+  - name: Download and install git
+    yum: name=git state=present
   
     
   - name: Remove old files foo
@@ -16,7 +20,7 @@
 
 
   - name: Copying Docker file
-    copy: src=Dockerfile dest=/var/docker/
+    copy: src=app/Dockerfile dest=/var/docker/
 
 
   - name: Build docker image

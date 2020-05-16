@@ -2,9 +2,9 @@
 lbservers:
   hosts:
     haproxy:
-      ipaddress: 192.168.56.107
+      ipaddress: 192.168.56.109
 
 backend:
   hosts:
     app:
-      ipaddress: 192.168.56.107
+      ipaddress: 192.168.56.109
