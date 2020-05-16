@@ -4,8 +4,12 @@
     yum: name=epel-release state=present
 
 
-  - name: Download and install git
-    yum: name=git state=present
+  - name: Download and install git, docker
+    yum: 
+     name:
+      - git
+      - docker
+     state: present
   
     
   - name: Remove old files foo
