@@ -31,9 +31,9 @@
 
 
   - name: Build docker image
-    command: docker build -t flaskapp:"{{ lookup('env', 'BUILD_ID')}}" /var/docker/
+    command: docker build -t flaskapp:"{{ lookup('env', 'BUILD_ID')}}" .
     #chdir: /var/docker/app
-    command: docker build -t flaskapp:ravi .
+    #command: docker build -t flaskapp:ravi .
     args:
       chdir: /var/docker/app
 
