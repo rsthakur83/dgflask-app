@@ -1,5 +1,4 @@
 ---
-- include_vars: var.yml
 
 - name: Download and install haproxy
   yum: name=haproxy state=present

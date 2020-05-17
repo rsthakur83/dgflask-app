@@ -1,0 +1,6 @@
+mode: http
+backend: dgflask-app-stage
+listenport: 5003
+balance: roundrobin
+haproxy_backend_servers: 
+      - {name: server1, ip: 192.168.56.110, port: 5000 check}

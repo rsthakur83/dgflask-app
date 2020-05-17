@@ -28,7 +28,7 @@ defaults
     timeout check           10s
     maxconn                 3000
 
-frontend  main *:5005
+frontend  main *: {{ listenport }}
     default_backend             app
 
 #---------------------------------------------------------------------
