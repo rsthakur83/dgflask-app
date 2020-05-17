@@ -36,6 +36,13 @@ frontend  main *:{{ listenport }}
 #---------------------------------------------------------------------
 
 
+frontend stats
+    bind *:8404
+    stats enable
+    stats uri /stats
+    stats refresh 10s
+    stats admin if LOCALHOST
+
 backend app
     balance     {{ balance }}
     {% for server in haproxy_backend_servers  %}
