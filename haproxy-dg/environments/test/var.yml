@@ -3,4 +3,4 @@ backend: dgflask-app-test
 listenport: 5002
 balance: roundrobin
 haproxy_backend_servers: 
-      - {name: server1, ip: 192.168.56.109}
+      - {name: test-server, ip: 192.168.56.109}

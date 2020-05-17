@@ -3,4 +3,4 @@ backend: dgflask-app-stage
 listenport: 5003
 balance: roundrobin
 haproxy_backend_servers: 
-      - {name: server1, ip: 192.168.56.110}
+      - {name: stage-server, ip: 192.168.56.110}
