@@ -39,5 +39,6 @@ frontend  main *: {{ listenport }}
 backend app
     balance     {{ balance }}
     {% for server in haproxy_backend_servers  %}
-        server {{ server.name }} {{ server.ip }}:{{ server.port }}
+        server {{ server.name }} {{ server.ip }}:{{ lookup('env', 'BUILD_ID')}}
+#        server {{ server.name }} {{ server.ip }}:{{ server.port }}
     {% endfor %}
