@@ -11,12 +11,7 @@ parameters {
   }
    stages {
       
-   	stage ('Downloading Source Code')  {
-         steps {
-   		git url: 'https://github.com/rsthakur83/dgflask-app.git'
-            
-         }
-      }
+
    
       stage ('Change permission')  {
          steps {
