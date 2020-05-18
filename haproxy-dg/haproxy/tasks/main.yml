@@ -10,7 +10,7 @@
   vars:
     packages:
     - haproxy
-    - docker-ce
+    - docker
 
 
 - name: Configure the haproxy cnf file with hosts
