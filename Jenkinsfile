@@ -19,7 +19,7 @@ parameters {
     }
       }
       
-      stage (sh 'Deploy in "${environment}"') {
+      stage ('Deploy in "${environment}"') {
          steps {
              sh 'echo "${environment}"'
          sh './docker.sh'
