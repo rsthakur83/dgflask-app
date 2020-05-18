@@ -1,11 +1,33 @@
-node {
-   
-   	stage 'Checkout'
+pipeline {
+    agent any
+
+  
+
+parameters {
+    choice(
+        name: 'environment',
+        choices: "test\nstage\nprod",
+        description: 'Release version to deploy' )
+  }
+   stages {
+      
+   	stage ('Downloading Source Code')  {
+         steps {
    		git url: 'https://github.com/rsthakur83/dgflask-app.git'
+            
+         }
+      }
    
-      stage 'Execute'
+      stage ('Change permission')  {
+         steps {
          sh 'chmod +x docker.sh'
-      stage 'Deploy in Test Env'
+    }
+      }
+      
+      stage ('Deploy in $environment') {
+         steps {
          sh './docker.sh'
- 
- }
+     }
+    }
+  }
+}
