@@ -24,7 +24,7 @@ parameters {
     }
       }
       
-      stage ('Deploy in $environment') {
+      stage ('Deploy in "${env.environment}"') {
          steps {
          sh './docker.sh'
      }
