@@ -1,18 +1,17 @@
 # dgflask-app
 ### Python Application
 
-I have used flask framework to build and render the response from the API https://api.chucknorris.io
-
-Below are the list of the routes which will provide the respective responses.
+## I have used flask framework to build and render the response from the API https://api.chucknorris.io
 
 
-### Note: In my case i used  both haproxy & application on same host its ip address is  192.168.1.66
+### Note: In my case i have used  both haproxy & application on same host its ip address is  192.168.1.66
 
 ### Here i have setup haproxy ipaddress as(for example IP Address: 192.168.1.66) and haproxy  act as proxy running on port no 5002 for the flask app and to access the flask run curl ex: curl http://192.168.1.66:5002/
 
 ### To monitor the status of haproxy use the url http://192.168.1.66:8404/stats (port 8404) to check the backend , session rate, error count etc..
+### Following is the list of the routes which will provide the respective responses.
 
-#### 1) Route/Endpoint curl http://192.168.1.66:5002/ will return the response "Hello!!!!!! Deutsche Börse Group'" 
+#### 1) Endpoint curl http://192.168.1.66:5002/ will return the response "Hello!!!!!! Deutsche Börse Group'" 
 #### 2) To get the jokes related response hit the route http://192.168.1.66:5002/jokes 
 #### 3) To get the category specific response hit the route http://192.168.1.66:5002/categories/<variable> , change variable with any name from categories list generated from the response https://api.chucknorris.io/jokes/categories example http://192.168.1.66:5002/categories/animal , http://192.168.1.66:5002/categories/political etc..
 #### 4) Similar to category specific response hit the route http://192.168.1.66:5002/query/<variable>, replace variable with any name from categories list generated from the response https://api.chucknorris.io/jokes/categories example http://192.168.1.66:5002/query/money  http://192.168.1.66:5002/query/fashion etc..
@@ -30,9 +29,25 @@ Below are the list of the routes which will provide the respective responses.
 
 #### Choose any one of the three environment from choice parameter and build the job
 
-###  Jenkins has three stages 1) Pull source code 2) Change the permission of docker.sh file to be executable , docker.sh trigger the playbook to deploy haproxy & flask app based on environment we select from choice parameter and set the variable accordingly
+###  Jenkins has three stages test, stage & prod
+![](app-environment.PNG)
+### 1) Pull source code 
+### 2) Change the permission of docker.sh file to be executable , docker.sh trigger the playbook to deploy haproxy & flask app based on environment we select from choice parameter and set the variable accordingly
+### 3) Jenkins will install necessary packages like docker ,haproxy  build the app container and expose it on port based on jenkins build number thus allow us to run multiple version of docker container . But we can only access the latest version of application on haproxy ip address at port 5002 for test, 5003 for stage & 5004 for prod
 
-### Jenkins will install necessary packages like docker ,haproxy  build the app container and expose it on port based on jenkins build number thus allow us to run multiple version of docker container . But we can access the latest version of application on haproxy ip address at port 5002 for test, 5003 for stage & 5004 for prod
 
+## Response for /   endpoint http://192.168.1.66:5002/
 
+<<<<<<< HEAD
 
+=======
+![](response-for-route.PNG)
+
+## Response for category endpoint  http://192.168.1.66:5002/categories/movie
+
+![](category-response.PNG)
+
+## Response for Query endpoint  http://192.168.1.66:5002/query/animal
+
+![](Query-response.PNG)
+>>>>>>> f4f662273a4520e0884e7728c000a8c2e510f1bc
