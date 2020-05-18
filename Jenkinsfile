@@ -7,7 +7,7 @@ parameters {
     choice(
         name: 'environment',
         choices: "test\nstage\nprod",
-        description: 'Release version to deploy' )
+        description: 'Deployment Environment' )
   }
    stages {
       
