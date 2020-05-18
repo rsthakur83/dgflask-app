@@ -1,7 +1,18 @@
 ---
 
-- name: Download and install haproxy
-  yum: name=haproxy state=present
+- name: Download and install epel-release
+  yum: name=epel-release state=present
+
+
+- name: Install Haproxy & Git packages
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - haproxy
+    - docker-ce
+    - git
+
 
 - name: Configure the haproxy cnf file with hosts
   template: src=haproxy.cfg.j2 dest=/etc/haproxy/haproxy.cfg

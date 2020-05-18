@@ -1,8 +1,0 @@
-mode: http
-backend: dgflask-app
-listenport: 5002
-haproxyname: localhost
-balance: roundrobin
-haproxy_backend_servers: 
-      - {name: server1, ip: 192.168.56.108, port: 5000 check}
-      - {name: server1, ip: 192.168.56.109, port: 5000 check}
