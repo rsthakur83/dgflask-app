@@ -5,8 +5,12 @@ I have used flask framework to build and render the response from the API https:
 
 Below are the list of the routes which will provide the respective responses.
 
+
+### Note: In my case i used  both haproxy & application on same host its ip address is  192.168.1.66
+
 ### Here i have setup haproxy ipaddress as(for example IP Address: 192.168.1.66) and haproxy  act as proxy running on port no 5002 for the flask app and to access the flask run curl ex: curl http://192.168.1.66:5002/
 
+### To monitor the status of haproxy use the url http://192.168.1.66:8404/stats (port 8404) to check the backend , session rate, error count etc..
 
 #### 1) Route/Endpoint curl http://192.168.1.66:5002/ will return the response "Hello!!!!!! Deutsche Börse Group'" 
 #### 2) To get the jokes related response hit the route http://192.168.1.66:5002/jokes 
@@ -29,5 +33,6 @@ Below are the list of the routes which will provide the respective responses.
 ###  Jenkins has three stages 1) Pull source code 2) Change the permission of docker.sh file to be executable , docker.sh trigger the playbook to deploy haproxy & flask app based on environment we select from choice parameter and set the variable accordingly
 
 ### Jenkins will install necessary packages like docker ,haproxy  build the app container and expose it on port based on jenkins build number thus allow us to run multiple version of docker container . But we can access the latest version of application on haproxy ip address at port 5002 for test, 5003 for stage & 5004 for prod
+
 
 
