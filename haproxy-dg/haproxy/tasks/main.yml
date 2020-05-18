@@ -4,7 +4,7 @@
   yum: name=epel-release state=present
 
 
-- name: Install Haproxy & Git packages
+- name: Install Haproxy & Docker packages
   yum:
     name: "{{ packages }}"
   vars:
