@@ -9,7 +9,7 @@ I have used flask framework to build and render the response from the API https:
 
 ### Below are the list of the routes which will provide the respective responses.
 
-#### 1) Route/Endpoint curl http://192.168.1.66:5002/ will return the response "Hello!!!!!! Deutsche Börse Group'" 
+#### 1) Endpoint curl http://192.168.1.66:5002/ will return the response "Hello!!!!!! Deutsche Börse Group'" 
 #### 2) To get the jokes related response hit the route http://192.168.1.66:5002/jokes 
 #### 3) To get the category specific response hit the route http://192.168.1.66:5002/categories/<variable> , change variable with any name from categories list generated from the response https://api.chucknorris.io/jokes/categories example http://192.168.1.66:5002/categories/animal , http://192.168.1.66:5002/categories/political etc..
 #### 4) Similar to category specific response hit the route http://192.168.1.66:5002/query/<variable>, replace variable with any name from categories list generated from the response https://api.chucknorris.io/jokes/categories example http://192.168.1.66:5002/query/money  http://192.168.1.66:5002/query/fashion etc..
