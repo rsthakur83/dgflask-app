@@ -26,7 +26,8 @@ Below are the list of the routes which will provide the respective responses.
 
 #### Choose any one of the three environment from choice parameter and build the job
 
-###  Jenkins has three stages 
+###  Jenkins has three stages test, stage & prod
+![](app-environment.PNG)
 ### 1) Pull source code 
 ### 2) Change the permission of docker.sh file to be executable , docker.sh trigger the playbook to deploy haproxy & flask app based on environment we select from choice parameter and set the variable accordingly
 ### 3) Jenkins will install necessary packages like docker ,haproxy  build the app container and expose it on port based on jenkins build number thus allow us to run multiple version of docker container . But we can access the latest version of application on haproxy ip address at port 5002 for test, 5003 for stage & 5004 for prod
