@@ -3,7 +3,7 @@
 
 ## I have used flask framework to build and render the response from the API https://api.chucknorris.io
 
-## Note: Both Haproxy and docker container running on same server (192.168.1.66)
+## Note: Both Haproxy and docker container running on same server (IP Address: 192.168.1.66)
 
 ### Here i have setup haproxy ipaddress as(for example IP Address: 192.168.1.66) and haproxy  act as proxy running on port no 5002 for the flask app and to access the flask run curl ex: curl http://192.168.1.66:5002/
 
