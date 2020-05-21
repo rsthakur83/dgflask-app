@@ -33,3 +33,7 @@ Below are the list of the routes which will provide the respective responses.
 ### 3) Jenkins will install necessary packages like docker ,haproxy  build the app container and expose it on port based on jenkins build number thus allow us to run multiple version of docker container . But we can only access the latest version of application on haproxy ip address at port 5002 for test, 5003 for stage & 5004 for prod
 
 
+## Route / response
+
+![](response -for-route.PNG)
+
