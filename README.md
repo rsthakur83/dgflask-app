@@ -7,7 +7,7 @@ I have used flask framework to build and render the response from the API https:
 
 ### Here i have setup haproxy ipaddress as(for example IP Address: 192.168.1.66) and haproxy  act as proxy running on port no 5002 for the flask app and to access the flask run curl ex: curl http://192.168.1.66:5002/
 
-### Below are the list of the routes which will provide the respective responses.
+### Following is the list of the routes which will provide the respective responses.
 
 #### 1) Endpoint curl http://192.168.1.66:5002/ will return the response "Hello!!!!!! Deutsche Börse Group'" 
 #### 2) To get the jokes related response hit the route http://192.168.1.66:5002/jokes 
